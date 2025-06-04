@@ -1,0 +1,4 @@
+*.env
+emails.json
+venv/
+*venv/
