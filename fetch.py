@@ -34,17 +34,16 @@ def save_emails(emails):
         json.dump(all_emails, f, ensure_ascii=False, indent=2)
 
 def main():
-    while True:
-        batch = fetch_batch()
-        if not batch:
-            print("No more emails to process.")
-            break
-        emails = [row for row in batch]
-        ids = [row["id"] for row in batch]
-        print(f"Fetched {len(emails)} emails.")
-        save_emails(emails)
-        delete_batch(ids)
-        print(f"Deleted {len(ids)} emails from Supabase.")
+    batch = fetch_batch()
+    if not batch:
+        print("No emails to process.")
+        return
+    emails = [row for row in batch]
+    ids = [row["id"] for row in batch]
+    print(f"Fetched {len(emails)} emails.")
+    save_emails(emails)
+    delete_batch(ids)
+    print(f"Deleted {len(ids)} emails from Supabase.")
 
 if __name__ == "__main__":
     main()

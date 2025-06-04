@@ -1,4 +1,4 @@
 *.env
-emails.json
+*.json
 venv/
 *venv/
