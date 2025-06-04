@@ -214,7 +214,8 @@ def main():
     reset_email_count()
 
     
-    json_file = input("Enter the JSON file to load emails from (e.g., FEWDF.json): ").strip()
+    # json_file = input("Enter the JSON file to load emails from (e.g., FEWDF.json): ").strip()
+    json_file = 'emails.json'
     collected_emails = load_emails_from_json(json_file)
 
     if not collected_emails:
